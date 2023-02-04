@@ -23,6 +23,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.SystemClock;
 
 public class AlarmSetter extends BroadcastReceiver {
@@ -34,7 +35,11 @@ public class AlarmSetter extends BroadcastReceiver {
 
 	public static void setAlarm(Context context) {
 		Intent intent = new Intent(context, CacheTrimService.class);
-		PendingIntent pi = PendingIntent.getService(context, 0, intent, 0);
+		int flags = 0;
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			flags |= PendingIntent.FLAG_IMMUTABLE;
+		}
+		PendingIntent pi = PendingIntent.getService(context, 0, intent, flags);
 		AlarmManager am = (AlarmManager) context
 				.getSystemService(Context.ALARM_SERVICE);
 		am.cancel(pi); // cancel any existing alarms

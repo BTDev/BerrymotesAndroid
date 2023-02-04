@@ -16,21 +16,24 @@
 
 package com.trellmor.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v4.view.ActionProvider;
-import android.support.v7.appcompat.R;
-import android.support.v7.widget.AppCompatDrawableManager;
+
+import androidx.appcompat.widget.AppCompatDrawableManager;
+import androidx.core.view.ActionProvider;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.SubMenu;
 import android.view.View;
+
+import com.trellmor.berrymotes.R;
 import com.trellmor.widget.ActivityChooserModel.OnChooseActivityListener;
 
 /**
@@ -227,6 +230,7 @@ public class ShareActionProvider extends ActionProvider {
         // Lookup and set the expand action icon.
         TypedValue outTypedValue = new TypedValue();
         mContext.getTheme().resolveAttribute(R.attr.actionModeShareDrawable, outTypedValue, true);
+        @SuppressLint("RestrictedApi")
         Drawable drawable = AppCompatDrawableManager.get()
                 .getDrawable(mContext, outTypedValue.resourceId);
         activityChooserView.setExpandActivityOverflowButtonDrawable(drawable);

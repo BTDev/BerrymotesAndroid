@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BerryMotesApp.iml" filepath="$PROJECT_DIR$/BerryMotesApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/berryMotesApp/berryMotesApp.iml" filepath="$PROJECT_DIR$/berryMotesApp/berryMotesApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libBerryMotes/libBerryMotes.iml" filepath="$PROJECT_DIR$/libBerryMotes/libBerryMotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BerrymotesAndroidApp.iml" filepath="$PROJECT_DIR$/.idea/modules/BerrymotesAndroidApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/berryMotesApp/BerrymotesAndroidApp.berryMotesApp.iml" filepath="$PROJECT_DIR$/.idea/modules/berryMotesApp/BerrymotesAndroidApp.berryMotesApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/berryMotesApp/BerrymotesAndroidApp.berryMotesApp.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/berryMotesApp/BerrymotesAndroidApp.berryMotesApp.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/berryMotesApp/BerrymotesAndroidApp.berryMotesApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/berryMotesApp/BerrymotesAndroidApp.berryMotesApp.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/berryMotesApp/BerrymotesAndroidApp.berryMotesApp.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/berryMotesApp/BerrymotesAndroidApp.berryMotesApp.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libBerryMotes/BerrymotesAndroidApp.libBerryMotes.iml" filepath="$PROJECT_DIR$/.idea/modules/libBerryMotes/BerrymotesAndroidApp.libBerryMotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libBerryMotes/BerrymotesAndroidApp.libBerryMotes.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/libBerryMotes/BerrymotesAndroidApp.libBerryMotes.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libBerryMotes/BerrymotesAndroidApp.libBerryMotes.main.iml" filepath="$PROJECT_DIR$/.idea/modules/libBerryMotes/BerrymotesAndroidApp.libBerryMotes.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libBerryMotes/BerrymotesAndroidApp.libBerryMotes.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/libBerryMotes/BerrymotesAndroidApp.libBerryMotes.unitTest.iml" />
     </modules>
   </component>
 </project>
-

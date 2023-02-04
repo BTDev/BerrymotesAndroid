@@ -26,7 +26,6 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.database.DataSetObservable;
 import android.os.AsyncTask;
-import android.support.v4.os.AsyncTaskCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Xml;
@@ -573,8 +572,7 @@ class ActivityChooserModel extends DataSetObservable {
         }
         mHistoricalRecordsChanged = false;
         if (!TextUtils.isEmpty(mHistoryFileName)) {
-            AsyncTaskCompat.executeParallel(new PersistHistoryAsyncTask(),
-                    new ArrayList<HistoricalRecord>(mHistoricalRecords), mHistoryFileName);
+            new Thread(new PersistHistoryAsyncTask(new ArrayList<HistoricalRecord>(mHistoricalRecords), mHistoryFileName)).start();
         }
     }
 
@@ -1031,21 +1029,24 @@ class ActivityChooserModel extends DataSetObservable {
     /**
      * Command for persisting the historical records to a file off the UI thread.
      */
-    private final class PersistHistoryAsyncTask extends AsyncTask<Object, Void, Void> {
+    private final class PersistHistoryAsyncTask implements Runnable {
+        private final List<HistoricalRecord> historicalRecords;
+        private final String historyFileName;
+
+        public PersistHistoryAsyncTask(List<HistoricalRecord> historicalRecords, String historyFileName){
+            this.historicalRecords = historicalRecords;
+            this.historyFileName = historyFileName;
+        }
 
         @Override
-        @SuppressWarnings("unchecked")
-        public Void doInBackground(Object... args) {
-            List<HistoricalRecord> historicalRecords = (List<HistoricalRecord>) args[0];
-            String hostoryFileName = (String) args[1];
-
+        public void run() {
             FileOutputStream fos = null;
 
             try {
-                fos = mContext.openFileOutput(hostoryFileName, Context.MODE_PRIVATE);
+                fos = mContext.openFileOutput(historyFileName, Context.MODE_PRIVATE);
             } catch (FileNotFoundException fnfe) {
-                Log.e(LOG_TAG, "Error writing historical recrod file: " + hostoryFileName, fnfe);
-                return null;
+                Log.e(LOG_TAG, "Error writing historical recrod file: " + historyFileName, fnfe);
+                return;
             }
 
             XmlSerializer serializer = Xml.newSerializer();
@@ -1091,7 +1092,6 @@ class ActivityChooserModel extends DataSetObservable {
                     }
                 }
             }
-            return null;
         }
     }
 }

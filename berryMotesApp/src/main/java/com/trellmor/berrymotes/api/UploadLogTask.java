@@ -23,7 +23,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.support.v7.app.NotificationCompat;
+
+import androidx.core.app.NotificationCompat;
 
 import com.google.gson.Gson;
 import com.trellmor.berrymotes.R;

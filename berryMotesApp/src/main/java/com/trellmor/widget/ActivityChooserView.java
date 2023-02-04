@@ -24,14 +24,14 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
 import android.graphics.drawable.Drawable;
-import android.support.v4.view.ActionProvider;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.appcompat.R;
-import android.support.v7.view.menu.ShowableListMenu;
-import android.support.v7.widget.ForwardingListener;
-import android.support.v7.widget.LinearLayoutCompat;
-import android.support.v7.widget.ListPopupWindow;
-import android.support.v7.widget.TintTypedArray;
+
+import androidx.appcompat.view.menu.ShowableListMenu;
+import androidx.appcompat.widget.ForwardingListener;
+import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.appcompat.widget.ListPopupWindow;
+import androidx.appcompat.widget.TintTypedArray;
+import androidx.core.view.ActionProvider;
+import androidx.core.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +44,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import com.trellmor.berrymotes.R;
 
 /**
  * This class is a view for choosing an activity for handling a given {@link Intent}.
