@@ -18,8 +18,8 @@
 -->
 <manifest package="com.trellmor.berrymotes"
 		  xmlns:android="http://schemas.android.com/apk/res/android"
-		  android:versionCode="20010"
-		  android:versionName="2.0.1">
+		  android:versionCode="20020"
+		  android:versionName="2.0.2">
 
 	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
